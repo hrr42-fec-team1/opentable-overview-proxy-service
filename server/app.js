@@ -9,10 +9,11 @@ const protocol = 'http';
 const host = '127.0.0.1';
 const baseURL = protocol + '://' + host;
 
-const imagePort = 3000;
 const overviewPort = 3001;
 const reservationPort = 3002;
 // TODO: Miss menu port
+const menuPort = 3003;
+const imagePort = 3004;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
