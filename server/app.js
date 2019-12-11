@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const axios = require('axios');
 const path = require('path');
-
+const cors = require('cors');
 const app = express();
 
 const protocol = 'http';
@@ -11,10 +11,10 @@ const baseURL = protocol + '://' + host;
 
 const overviewPort = 3001;
 const reservationPort = 3002;
-// TODO: Miss menu port
 const menuPort = 3003;
 const imagePort = 3004;
 
+app.use(cors());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 
