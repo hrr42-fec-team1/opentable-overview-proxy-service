@@ -2,6 +2,10 @@
   position: relative;
 }
 
+#lightbox-container {
+  width: 90%;
+}
+
 .lightbox-backdrop {
   position: fixed;
   width: 100%;
@@ -206,7 +210,7 @@
 .container-title {
   color: white;
   font-weight: 300;
-  font-size: 1.5vw;
+  font-size: 0.9vw;
   font-family: "Josefin Sans", sans-serif;
   position: absolute;
   top: 50%;

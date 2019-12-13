@@ -1,306 +1,59 @@
-/* @media (min-width: 1000px) {
-  .lightbox-container {
-    width: 449px;
-  } */
+body{
+  background-color: rgba(128, 128, 128, 0.096);
+  height: 3000px;
+}
 
-  #inner-frame-container {
-    position: relative;
-    top: 10%;
-    left: 15%;
-    width: 40%;
-    height: 1000px;
-    background-color: white;
-  }
+#headers{
+  position: absolute;
+  top: 1%;
+}
 
-  #overview-section {
-    position: relative;
-    top: 5%;
-    left: 5%;
-    height: 10%;
-  }
+#outer-frame-container{
+  position: fixed;
+  top: 2%;
+  left: 5%;
+  width: 90%;
+  height: 100%;
+  background-color: white;
+  overflow-y:scroll;
+}
+#inner-frame-container{
+  position: absolute;
+  top: 33%;
+  left: 20%;
+  width: 40%;
+  height: 100%;
+  background-color: white;
+}
+#imageCarouselTop-session {
+  position: absolute;
+  top: 7%;
+  width: 109.3%;
+}
 
-  #imageCarousel-session {
-    top:48%;
-    left:5%;
-    height:10%;
-  }
+#overview-section {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+}
 
-  #reservation {
-    position: absolute;
-    top:12%;
-    left: 70%;
-  }
+#imageCarousel-session {
+  position: absolute;
+  top: 80%;
+  left: 5%;
+  width: 190%;
+}
 
-  .lightbox-backdrop {
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.87);
-    top: 0px;
-    left: 0px;
-    z-index: 100;
-  }
+#reservation {
+  background-color: white;
+  /* position: fixed; */
+  position: absolute;
+  top: 35%;
+  left: 62%;
+}
 
-  .lightbox-btn-left,
-  .lightbox-btn-right,
-  .lightbox-btn-close,
-  .lightbox-title-content{
-    transition: opacity 200ms ease;
-  }
-
-  @media (max-width: 767px) {
-    .hide-controls .lightbox-btn-left,
-    .hide-controls .lightbox-btn-right {
-      opacity: 0.2;
-      pointer-events: none;
-    }
-  }
-
-  @media (max-height: 599px) {
-    .hide-controls .lightbox-btn-close,
-    .hide-controls .lightbox-title-content{
-      opacity: 0.2;
-      pointer-events: none;
-    }
-  }
-
-  .lightbox-btn-close {
-    position: fixed;
-    top: 2%;
-    right: 0;
-    z-index: 2;
-  }
-
-  .lightbox-btn-right {
-    position: absolute;
-    top: 50%;
-    margin-top: -1.5em;
-    right: -70px;
-  }
-
-  .lightbox-btn-left {
-    position: absolute;
-    top: 50%;
-    margin-top: -1.5em;
-    left: -70px;
-  }
-
-  @media (min-width: 768px) {
-    .lightbox-btn-right {
-      padding-right: 10px;
-    }
-
-    .lightbox-btn-left {
-      padding-left: 10px;
-    }
-  }
-
-  .lightbox-title-content {
-    background-color: rgba(0, 0, 0, 0.2);
-    box-shadow: 0 5px 5px -3px rgba(0,0,0,.2), 0 8px 10px 1px rgba(0,0,0,.14), 0 3px 14px 2px rgba(0,0,0,.12);
-    position: relative;
-    width: 100%;
-    z-index: 1;
-    bottom: 0;
-    text-align: left;
-    padding: 10px;
-    font-family: "Josefin Sans";
-    line-height: 1.42857143;
-    outline: none;
-  }
-
-
-  .lightbox-title {
-    color: white;
-    font-weight: 'bold';
-    font-size: 16px;
-  }
-
-  .lightbox-description {
-    color: #C5C5C5;
-    font-size: 14px;
-  }
-
-  .lightbox-transition-image-appear {
-    opacity: 0.1;
-  }
-
-  .lightbox-transition-image-appear.lightbox-transition-image-appear-active {
-    opacity: 1;
-    transition: opacity .3s ease-in;
-  }
-
-  .lightbox-transition-image-enter-right {
-    transform: translate(100%);
-  }
-
-  .lightbox-transition-image-enter-right.lightbox-transition-image-enter-right-active {
-    transform: translate(0%);
-    transition: transform 300ms ease-in-out;
-  }
-
-  .lightbox-transition-image-leave-right {
-    transform: translate(0%);
-  }
-
-  .lightbox-transition-image-leave-right.lightbox-transition-image-leave-right-active {
-    transform: translate(-100%);
-    transition: transform 300ms ease-in-out;
-  }
-
-  .lightbox-transition-image-enter-left {
-    transform: translate(-100%);
-  }
-
-  .lightbox-transition-image-enter-left.lightbox-transition-image-enter-left-active {
-    transform: translate(0%);
-    transition: transform 300ms ease-in-out;
-  }
-
-  .lightbox-transition-image-leave-left {
-    transform: translate(0%);
-  }
-
-  .lightbox-transition-image-leave-left.lightbox-transition-image-leave-left-active {
-    transform: translate(100%);
-    transition: transform 300ms ease-in-out;
-  }
-
-  .lightbox-content-center {
-    width: 100%;
-    height: 100%;
-    position: absolute;
-  }
-
-  @media (min-width: 768px) {
-    .lightbox-image-container {
-      margin: 0 5em;
-    }
-  }
-
-  .lightbox-image-container {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-
-  .lightbox-image {
-    height: 100%;
-    background-repeat: no-repeat;
-  }
-
-  .lightbox-image.moving {
-    transition: none;
-  }
-
-  .lightbox-loader {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 100%;
-    fill: white;
-    animation: rotating 2s linear infinite;
-  }
-
-
-  .lightbox-btn {
-    touch-action: manipulation;
-    cursor: pointer;
-    user-select: none;
-    background-image: none;
-    background: none;
-    border: 0.5px solid transparent;
-    fill: rgb(218, 216, 216);
-    opacity: 0.5;
-    outline: none;
-    padding: 0 0;
-    -webkit-tap-highlight-color: #ffffff00;
-  }
-
-  .lightbox-btn:hover {
-    opacity: 1;
-    transition: opacity 200ms ease;
-  }
-
-  .lightbox-btn--ripple rect {
-    fill: none;
-  }
-
-  .pictures-container {
-    background-color:rgba(0, 0, 0, 0.2);
-  }
-
-  .pictures-container:hover{
-    background-color:rgba(0, 0, 0, 0.7);
-  }
-
-  .container-title {
-    color: white;
-    font-weight: 300;
-    font-size: 1.5vw;
-    font-family: "Josefin Sans", sans-serif;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
-  }
-
-  .lightbox-btn-heart {
-    fill:#fff;
-    position: absolute;
-    bottom: 30%;
-    right: 2%;
-  }
-
-  .reservation {
-    margin: auto;
-    width: 320px;
-    padding: 15px;
-    box-shadow: rgba(153, 153, 153, 0.4) 0px 2px 8px 0px;
-    font-family: 'Josefin Sans', sans-serif;
-  }
-
-  .find-table-button {
-    width: 100%;
-    height: 50px;
-    background-color: rgb(218, 55,67);
-    color: white;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 18px
-  }
-
-  .find-table-button:focus {
-    outline: none;
-  }
-
-  .response-box {
-    width: 100%;
-    height: 50px;
-    background-color: #f0f0f0;
-    color: darkslategrey;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 14px
-  }
-
-  .bookings-today {
-    margin-bottom: 5px;
-  }
-  input {
-    border: 0px;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px;
-  }
-
-  input:focus {
-    outline: none;
-  }
-
-  select {
-    border: 0px;
-    background-color: white;
-    font-family: 'Josefin Sans', sans-serif;
-    font-size: 15px
-  }
-
-  select:focus {
-    outline: none;
-  }
+#menu-section {
+  position: absolute;
+  left: 5%;
+  top:120%;
+}
